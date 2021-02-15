@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 1
   knockTime: 0.5
+  damage: 1
 --- !u!1 &245464705
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +904,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  health: 4
+  maxHealth: {fileID: 11400000, guid: 91c4bbcf9c1d21942bfbadebd0fb664a, type: 2}
+  health: 2
   enemyName: Skeleton
   baseAttack: 1
   moveSpeed: 1
@@ -952,6 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.5
+  damage: 0
 --- !u!1 &801355410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,6 +2159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 1
   knockTime: 0.5
+  damage: 1
 --- !u!1001 &1772525962
 PrefabInstance:
   m_ObjectHideFlags: 0
