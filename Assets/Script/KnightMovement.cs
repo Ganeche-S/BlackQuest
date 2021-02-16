@@ -12,6 +12,8 @@ public class KnightMovement : MonoBehaviour
    	private Vector3 change;
    	private Rigidbody2D myRigidbody;
    	private Animator animator;
+    public FloatValue currentHealth;
+    public Signal knightHealthSignal;
 
     void Start()
     {
@@ -60,8 +62,15 @@ public class KnightMovement : MonoBehaviour
     	myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 
-    public void Knock(float knockTime) {
-        StartCoroutine(KnockCo(knockTime));
+    public void Knock(float knockTime, float damage) {
+        currentHealth.RuntimeValue -= damage;
+        knightHealthSignal.Raise();
+        if(currentHealth.RuntimeValue > 0) {
+            StartCoroutine(KnockCo(knockTime));
+        }
+        else {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator KnockCo(float knockTime) {
