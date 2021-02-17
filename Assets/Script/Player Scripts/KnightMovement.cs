@@ -14,6 +14,8 @@ public class KnightMovement : MonoBehaviour
    	private Animator animator;
     public FloatValue currentHealth;
     public Signal knightHealthSignal;
+    public Inventory knightInventory;
+    public SpriteRenderer receivedItemSprite;
 
     void Start()
     {
@@ -25,7 +27,11 @@ public class KnightMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //is the player is an interaction
+        if(currentState == KnightState.interact) {
+            return;
+        }
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -43,7 +49,24 @@ public class KnightMovement : MonoBehaviour
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
-        currentState = KnightState.walk;
+        if(currentState != KnightState.interact) {
+            currentState = KnightState.walk;
+        }
+    }
+
+    public void RaiseItem() {
+        if(knightInventory.currentItem != null) {
+            if(currentState != KnightState.interact) {
+                animator.SetBool("receive item", true);
+                currentState = KnightState.interact;
+                receivedItemSprite.sprite = knightInventory.currentItem.itemSprite;
+            }
+            else {
+                animator.SetBool("receive item", false);
+                currentState = KnightState.idle;
+                receivedItemSprite.sprite = null;
+            }
+        }
     }
 
     void UpdateAnimationAndMove() {

@@ -45,12 +45,12 @@ TagManager:
   - name: Signs
     uniqueID: 1988385985
     locked: 0
+  - name: breakable
+    uniqueID: 3059967677
+    locked: 0
   - name: Decoration
     uniqueID: 655602191
     locked: 0
   - name: Player
     uniqueID: 2103322779
-    locked: 0
-  - name: breakable
-    uniqueID: 3059967677
     locked: 0
