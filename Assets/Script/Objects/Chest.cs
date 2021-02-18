@@ -57,7 +57,7 @@ public class Chest : Interactable {
 	    //raise the signal to the player to stop animating
 	    raiseItem.Raise();
 	    //set the current item to empty
-	    /*knightInventory.currentItem = null;*/
+	    knightInventory.currentItem = null;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
