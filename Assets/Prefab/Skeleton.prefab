@@ -172,6 +172,9 @@ MonoBehaviour:
   enemyName: Skeleton
   baseAttack: 1
   moveSpeed: 1
+  deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
+    type: 3}
+  myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 5
   attackRadius: 1
