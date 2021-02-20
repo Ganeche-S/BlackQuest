@@ -38,7 +38,7 @@ public class Trigger : Enemy
 	    	}
     	}
     	else if(Vector3.Distance(target.position, transform.position) > chaseRadius) {
-	    	ChangeState(EnemyState.idle);
+	    	/*ChangeState(EnemyState.idle);*/
 	    	anim.SetBool("trigger", false);
 	    }
     }

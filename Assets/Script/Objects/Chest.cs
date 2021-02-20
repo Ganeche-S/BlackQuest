@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class Chest : Interactable {
 
+	[Header("Contents")]
 	public Item contents;
 	public Inventory knightInventory;
 	public bool isOpen;
+
+	[Header("Signals and Dialog")]
 	public Signal raiseItem;
 	public GameObject dialogBox;
 	public Text dialogText;
+
+	[Header("Animation")]
 	private Animator anim;
 
     // Start is called before the first frame update

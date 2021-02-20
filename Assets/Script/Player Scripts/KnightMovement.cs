@@ -16,6 +16,7 @@ public class KnightMovement : MonoBehaviour
     public Signal knightHealthSignal;
     public Inventory knightInventory;
     public SpriteRenderer receivedItemSprite;
+    public Signal knightHit;
 
     void Start()
     {
@@ -97,6 +98,7 @@ public class KnightMovement : MonoBehaviour
     }
 
     private IEnumerator KnockCo(float knockTime) {
+        knightHit.Raise();
         if(myRigidbody != null) {
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
