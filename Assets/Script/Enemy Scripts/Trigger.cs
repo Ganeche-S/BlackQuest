@@ -6,10 +6,14 @@ using UnityEngine;
 public class Trigger : Enemy
 {
 	public Rigidbody2D myRigidbody;
+
+    [Header("Target Variables")]
 	public Transform target;
 	public float chaseRadius;
 	public float attackRadius;
 	public Transform homePosition;
+
+    [Header("Animator")]
 	public Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -66,7 +70,7 @@ public class Trigger : Enemy
     		}
     	}*/
     }
-    private void ChangeState(EnemyState newState) {
+    public void ChangeState(EnemyState newState) {
     	if(currentState != newState) {
     		currentState = newState;
     	}
