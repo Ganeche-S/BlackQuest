@@ -11,7 +11,7 @@ public class TurretEnemy : Trigger
 
 	private void Update() {
 		fireDelaySeconds -= Time.deltaTime;
-		if(fireDelay <= 0) {
+		if(fireDelaySeconds <= 0) {
 			canFire = true;
 			fireDelaySeconds = fireDelay;
 		}
@@ -20,7 +20,7 @@ public class TurretEnemy : Trigger
 	public override void CheckDistance() {
 	    if(Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius) {
     		if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger) {
-    			if(canFire = true) {
+    			if(canFire) {
 		    		Vector3 tempVector = target.transform.position - transform.position;
 		    		GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
 		    		current.GetComponent<Projectile>().Launch(tempVector);
