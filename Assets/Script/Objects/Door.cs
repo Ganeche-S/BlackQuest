@@ -39,6 +39,11 @@ public class Door : Interactable
 	}
 
 	public void Close() {
-
+		//Enlever le sprite de la porte fermé
+		doorSprite.enabled = true;
+		//Mettre le bool de l'ouverture de la porte en true
+		open = false;
+		//Enlever le box collider de la porte
+		physicsCollider.enabled = true;
 	}
 }
