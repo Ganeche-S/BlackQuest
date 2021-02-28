@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcaf0dc3cbda78f459b268f3a01a26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2.5
+  thrust: 3
   knockTime: 1
   damage: 2
 --- !u!95 &2336118917420953183
@@ -215,10 +215,12 @@ MonoBehaviour:
   moveSpeed: 2
   deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
     type: 3}
+  thisLoot: {fileID: 0}
+  roomSignal: {fileID: 11400000, guid: d2dcaf3ac7536c44ebcaef25e145cc22, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 4
-  attackRadius: 0
+  attackRadius: 1
   homePosition: {fileID: 0}
   anim: {fileID: 0}
   path: []

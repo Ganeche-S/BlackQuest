@@ -127,7 +127,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13758063, y: -1.4913483}
+  m_Offset: {x: -0.007074237, y: -0.6267395}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -138,7 +138,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5715699, y: 0.34240723}
+  m_Size: {x: 1.9467757, y: 2.0716248}
   m_EdgeRadius: 0
 --- !u!50 &335116642458933739
 Rigidbody2D:
@@ -178,13 +178,15 @@ MonoBehaviour:
   health: 4
   enemyName: Goblin
   baseAttack: 2
-  moveSpeed: 2
+  moveSpeed: 1.5
   deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
     type: 3}
+  thisLoot: {fileID: 0}
+  roomSignal: {fileID: 11400000, guid: d2dcaf3ac7536c44ebcaef25e145cc22, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 4
-  attackRadius: 0
+  attackRadius: 1
   homePosition: {fileID: 0}
   anim: {fileID: 0}
 --- !u!114 &335116642458933737
@@ -199,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcaf0dc3cbda78f459b268f3a01a26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2.5
+  thrust: 2
   knockTime: 1
   damage: 2
 --- !u!95 &335116642458933743

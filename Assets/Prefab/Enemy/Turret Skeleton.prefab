@@ -215,6 +215,7 @@ MonoBehaviour:
   moveSpeed: 0
   deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
     type: 3}
+  roomSignal: {fileID: 11400000, guid: d2dcaf3ac7536c44ebcaef25e145cc22, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
