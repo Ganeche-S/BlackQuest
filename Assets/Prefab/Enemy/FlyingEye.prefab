@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1110747782601545607}
   - component: {fileID: 1110747782601545608}
   - component: {fileID: 1110747782601545603}
-  - component: {fileID: 668986863294061794}
   - component: {fileID: -6480418884889837471}
   m_Layer: 8
   m_Name: FlyingEye
@@ -196,34 +195,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &668986863294061794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110747782601545610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7408604c6dd8fe64f82692476f935303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  maxHealth: {fileID: 11400000, guid: 91c4bbcf9c1d21942bfbadebd0fb664a, type: 2}
-  health: 2
-  enemyName: Flying Eye
-  baseAttack: 1
-  moveSpeed: 3
-  deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
-    type: 3}
-  thisLoot: {fileID: 0}
-  roomSignal: {fileID: 11400000, guid: d2dcaf3ac7536c44ebcaef25e145cc22, type: 2}
-  myRigidbody: {fileID: 0}
-  target: {fileID: 0}
-  chaseRadius: 0
-  attackRadius: 0
-  homePosition: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!114 &-6480418884889837471
 MonoBehaviour:
   m_ObjectHideFlags: 0
