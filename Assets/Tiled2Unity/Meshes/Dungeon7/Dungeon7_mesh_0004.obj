@@ -1,7 +1,7 @@
 ﻿# Tiled2Unity generated file. Do not modify by hand.
 # Wavefront file for 'Dungeon7_mesh_0004.obj'
 
-# Vertices (Count = 92)
+# Vertices (Count = 96)
 v -23 -1 0
 v -24 -1 0
 v -24 0 0
@@ -94,6 +94,10 @@ v -1 -1 0
 v -2 -1 0
 v -2 0 0
 v -1 0 0
+v 0 -1 0
+v -1 -1 0
+v -1 0 0
+v 0 0 0
 
 # Texture cooridinates (Count = 4)
 vt 0 0
@@ -131,4 +135,5 @@ f 77/1/1 78/2/1 79/3/1 80/4/1
 f 81/1/1 82/2/1 83/3/1 84/4/1
 f 85/1/1 86/2/1 87/3/1 88/4/1
 f 89/1/1 90/2/1 91/3/1 92/4/1
+f 93/1/1 94/2/1 95/3/1 96/4/1
 
