@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 335116642458933736}
   - component: {fileID: 335116642458933742}
+  - component: {fileID: 335116642458933743}
   - component: {fileID: 335116642458933741}
-  - component: {fileID: 335116642458933740}
   - component: {fileID: 335116642458933739}
+  - component: {fileID: 335116642458933740}
   - component: {fileID: 335116642458933738}
   - component: {fileID: 335116642458933737}
-  - component: {fileID: 335116642458933743}
   m_Layer: 8
   m_Name: Goblin
   m_TagString: enemy
@@ -88,6 +88,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &335116642458933743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335116642458933735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b162055fd87c7b4fbbbe8fd6fd1019a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &335116642458933741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114,6 +133,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.031, y: 2.1254196}
   m_EdgeRadius: 0
+--- !u!50 &335116642458933739
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335116642458933735}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &335116642458933740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,27 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9467757, y: 2.0716248}
   m_EdgeRadius: 0
---- !u!50 &335116642458933739
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335116642458933735}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &335116642458933738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,22 +223,3 @@ MonoBehaviour:
   thrust: 2
   knockTime: 1
   damage: 2
---- !u!95 &335116642458933743
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335116642458933735}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b162055fd87c7b4fbbbe8fd6fd1019a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

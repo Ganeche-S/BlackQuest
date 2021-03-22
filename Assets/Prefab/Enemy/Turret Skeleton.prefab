@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2600950347380830799}
   - component: {fileID: 2600950345936873814}
   - component: {fileID: 2600950345936873817}
-  - component: {fileID: 2600950345936873816}
   - component: {fileID: 2600950345936873819}
+  - component: {fileID: 2600950345936873816}
   - component: {fileID: 2600950345936873821}
-  - component: {fileID: 2600950345936873820}
   - component: {fileID: 2600950345936873810}
+  - component: {fileID: 2600950345936873820}
   m_Layer: 8
   m_Name: Turret Skeleton
   m_TagString: enemy
@@ -107,27 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &2600950345936873816
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2600950345936873823}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &2600950345936873819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,6 +133,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5697775, y: 0.602128}
   m_EdgeRadius: 0
+--- !u!50 &2600950345936873816
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600950345936873823}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &2600950345936873821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,21 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7261887, y: 3.2773376}
   m_EdgeRadius: 0
---- !u!114 &2600950345936873820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2600950345936873823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcaf0dc3cbda78f459b268f3a01a26d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 3
-  knockTime: 0.5
-  damage: 1
 --- !u!114 &2600950345936873810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +200,7 @@ MonoBehaviour:
   moveSpeed: 0
   deathEffect: {fileID: 8145169888204148012, guid: c4164189c6d9eb6459d334c4ffc72fd6,
     type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 11400000, guid: d2dcaf3ac7536c44ebcaef25e145cc22, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
@@ -226,3 +212,18 @@ MonoBehaviour:
     type: 3}
   fireDelay: 1
   canFire: 0
+--- !u!114 &2600950345936873820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600950345936873823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcaf0dc3cbda78f459b268f3a01a26d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 3
+  knockTime: 0.5
+  damage: 1

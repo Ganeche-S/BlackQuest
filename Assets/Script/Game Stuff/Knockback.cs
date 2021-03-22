@@ -12,7 +12,7 @@ public class Knockback : MonoBehaviour
 /*    	if(other.gameObject.CompareTag("breakable") && this.gameObject.tag.CompareTag("Player")) {
     		other.GetComponent<pot>().Smash();
     	}*/
-    	if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player")) {
+    	if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Boss") || other.gameObject.CompareTag("Player")) {
     		Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
     		if(hit != null) {
     			Vector2 difference = hit.transform.position - transform.position;
@@ -22,6 +22,10 @@ public class Knockback : MonoBehaviour
     				hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
     				other.GetComponent<Enemy>().Knock(hit, knockTime, damage);
     			}
+                if(other.gameObject.CompareTag("Boss") && other.isTrigger) {
+                    hit.GetComponent<Boss>().currentState = BossState.stagger;
+                    other.GetComponent<Boss>().Knock(hit, knockTime, damage);
+                }
     			if(other.gameObject.CompareTag("Player")) {
     				if(other.GetComponent<KnightMovement>().currentState != KnightState.stagger) {
 	    				hit.GetComponent<KnightMovement>().currentState = KnightState.stagger;
