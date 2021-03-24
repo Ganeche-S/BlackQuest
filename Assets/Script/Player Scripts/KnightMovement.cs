@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum KnightState {
-    walk, attack, interact, stagger, idle
+    walk, attack, interact, stagger, idle, dead
 }
 public class KnightMovement : MonoBehaviour
 {
@@ -36,7 +36,7 @@ public class KnightMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("attack") && currentState != KnightState.attack && currentState != KnightState.stagger) {
+        if(Input.GetButtonDown("attack") && currentState != KnightState.attack && currentState != KnightState.stagger && currentState != KnightState.dead) {
             StartCoroutine(AttackCo());
         }
         else if(currentState == KnightState.walk || currentState == KnightState.idle) {
@@ -71,19 +71,19 @@ public class KnightMovement : MonoBehaviour
     }
 
     void UpdateAnimationAndMove() {
-    	if(change != Vector3.zero) {
-        	MoveCharacter();
-        	animator.SetFloat("moveX", change.x);
-        	animator.SetBool("moving", true);
+        if(change != Vector3.zero) {
+            MoveCharacter();
+            animator.SetFloat("moveX", change.x);
+            animator.SetBool("moving", true);
         }
         else {
-        	animator.SetBool("moving", false);
+            animator.SetBool("moving", false);
         }
     }
 
     void MoveCharacter() {
         change.Normalize();
-    	myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 
     public void Knock(float knockTime, float damage) {
@@ -93,18 +93,27 @@ public class KnightMovement : MonoBehaviour
             StartCoroutine(KnockCo(knockTime));
         }
         else {
-            this.gameObject.SetActive(false);
+            currentState = KnightState.dead;
+            animator.SetBool("dead", true);
+            myRigidbody.isKinematic = true;
+            myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            StartCoroutine(Destroy());
         }
     }
 
     private IEnumerator KnockCo(float knockTime) {
         knightHit.Raise();
-        if(myRigidbody != null) {
+        if(myRigidbody != null || currentState != KnightState.dead) {
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
             currentState = KnightState.idle;
             myRigidbody.velocity = Vector2.zero; 
         }
+    }
+
+    private IEnumerator Destroy() {
+        yield return new WaitForSeconds(1.2f);
+        this.gameObject.SetActive(false);
     }
 
 }
