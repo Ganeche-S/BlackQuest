@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
 	public Rigidbody2D myRigidbody;
 	public Transform target;
 	public Animator anim;
-	
+	public GameManagement game;
 
     void Start()
     {
@@ -33,6 +33,8 @@ public class Boss : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
+        FindObjectOfType<AudioManager>().Stop("Dungeon");
+        FindObjectOfType<AudioManager>().Play("Boss");
     }
 
     void FixedUpdate(){
@@ -47,16 +49,20 @@ public class Boss : MonoBehaviour
 		healthBar.SetHealth(currentHealth);
 		if(currentHealth <= 0) {
 			/*DeathEffect();*/
+            FindObjectOfType<AudioManager>().Stop("Boss");
 			currentState = BossState.dead;
 			anim.SetBool("dead", true);
+            FindObjectOfType<AudioManager>().Play("BossDeath");
 			StartCoroutine(Destroy());
 		}
 	}
 
 	private IEnumerator Destroy() {
+        game.gameWinOrDefeat();
     	yield return new WaitForSeconds(2.8f);
     	this.gameObject.SetActive(false);
     	healthBar.SetActiveFalse();
+        this.game.SetActiveTrue();
     }
 
 
@@ -75,18 +81,20 @@ public class Boss : MonoBehaviour
     }
 
     public virtual void CheckDistance() {
-    	if(Vector3.Distance(target.position, transform.position) > attackRadius) {
-	    	if(currentState == BossState.idle && currentState != BossState.stagger && currentState != BossState.dead) {
-		    	Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-		    	changeAnim(temp - transform.position);
-		    	myRigidbody.MovePosition(temp);
-	    	}
-	    }
-	    else {
-	    	if(currentState == BossState.idle && currentState != BossState.stagger && currentState != BossState.dead) {
-	    		StartCoroutine(AttackCo());
-	    	}
-	    }
+        if(game.playerIsAlive() == true) {
+        	if(Vector3.Distance(target.position, transform.position) > attackRadius) {
+    	    	if(currentState == BossState.idle && currentState != BossState.stagger && currentState != BossState.dead) {
+    		    	Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+    		    	changeAnim(temp - transform.position);
+    		    	myRigidbody.MovePosition(temp);
+    	    	}
+    	    }
+    	    else {
+    	    	if(currentState == BossState.idle && currentState != BossState.stagger && currentState != BossState.dead) {
+    	    		StartCoroutine(AttackCo());
+    	    	}
+    	    }
+        }
     }
 
     public IEnumerator AttackCo() {

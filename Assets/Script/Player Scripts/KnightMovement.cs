@@ -1,22 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum KnightState {
     walk, attack, interact, stagger, idle, dead
 }
 public class KnightMovement : MonoBehaviour
 {
+    [Header("State Machine")]
     public KnightState currentState;
+
+    [Header("Player Stats")]
    	public float speed;
-   	private Vector3 change;
-   	private Rigidbody2D myRigidbody;
-   	private Animator animator;
     public FloatValue currentHealth;
-    public Signal knightHealthSignal;
     public Inventory knightInventory;
-    public SpriteRenderer receivedItemSprite;
+
+    [Header("Player Stuff")]
     public Signal knightHit;
+    public SpriteRenderer receivedItemSprite;
+    public Signal knightHealthSignal;
+    private Vector3 change;
+    public Rigidbody2D myRigidbody;
+    private Animator animator;
+    public GameManagement game;
 
     void Start()
     {
@@ -78,6 +85,7 @@ public class KnightMovement : MonoBehaviour
         }
         else {
             animator.SetBool("moving", false);
+            FindObjectOfType<AudioManager>().Play("KnightMovement");
         }
     }
 
@@ -95,8 +103,8 @@ public class KnightMovement : MonoBehaviour
         else {
             currentState = KnightState.dead;
             animator.SetBool("dead", true);
-            myRigidbody.isKinematic = true;
-            myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
+            game.gameWinOrDefeat();
             StartCoroutine(Destroy());
         }
     }
@@ -114,6 +122,7 @@ public class KnightMovement : MonoBehaviour
     private IEnumerator Destroy() {
         yield return new WaitForSeconds(1.2f);
         this.gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 
 }

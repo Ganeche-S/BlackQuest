@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - Door
     - EnemyRoom
     - FloatValue
+    - GameManagement
     - HealthBarBoss
     - Heart
     - HeartManager
@@ -153,49 +154,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12686}
     - Class: 114
-      Script: {instanceID: 12728}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 12904}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 12942}
+      Script: {instanceID: 12906}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 12944}
     - Class: 114
-      Script: {instanceID: 13232}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13394}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13440}
+      Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 13484}
+      Script: {instanceID: 13396}
     - Class: 114
-      Script: {instanceID: 13676}
+      Script: {instanceID: 13442}
     - Class: 114
-      Script: {instanceID: 13812}
+      Script: {instanceID: 13486}
+    - Class: 114
+      Script: {instanceID: 13492}
+    - Class: 114
+      Script: {instanceID: 13678}
     - Class: 114
       Script: {instanceID: 13814}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 13816}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13840}
     - Class: 114
-      Script: {instanceID: 14012}
+      Script: {instanceID: 13946}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14188}
+      Script: {instanceID: 14014}
     - Class: 114
-      Script: {instanceID: 14258}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14350}
+      Script: {instanceID: 14190}
     - Class: 114
-      Script: {instanceID: 14502}
+      Script: {instanceID: 14260}
     - Class: 114
-      Script: {instanceID: 14610}
+      Script: {instanceID: 14352}
     - Class: 114
-      Script: {instanceID: 14652}
+      Script: {instanceID: 14432}
     - Class: 114
-      Script: {instanceID: 14704}
+      Script: {instanceID: 14504}
+    - Class: 114
+      Script: {instanceID: 14612}
+    - Class: 114
+      Script: {instanceID: 14654}
+    - Class: 114
+      Script: {instanceID: 14706}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -215,6 +226,69 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 156049354
+      Script: {instanceID: 0}
+    Assets/Scenes/GameOver.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11312}
+    - Class: 114
+      Script: {instanceID: 11424}
+    - Class: 114
+      Script: {instanceID: 11618}
+    - Class: 114
+      Script: {instanceID: 11678}
+    - Class: 114
+      Script: {instanceID: 12384}
+    - Class: 114
+      Script: {instanceID: 12700}
+    - Class: 114
+      Script: {instanceID: 13122}
+    - Class: 114
+      Script: {instanceID: 13492}
+    - Class: 114
+      Script: {instanceID: 13840}
+    - Class: 114
+      Script: {instanceID: 13946}
+    - Class: 114
+      Script: {instanceID: 14432}
+    - Class: 114
+      Script: {instanceID: 14612}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/Menu.unity:
     - Class: 1
@@ -256,29 +330,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 12754}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13490}
+      Script: {instanceID: 13492}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13838}
+      Script: {instanceID: 13840}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 13946}
     - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 14254}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14432}
     - Class: 114
-      Script: {instanceID: 14576}
+      Script: {instanceID: 14578}
     - Class: 114
-      Script: {instanceID: 14610}
+      Script: {instanceID: 14612}
     - Class: 114
-      Script: {instanceID: 14630}
+      Script: {instanceID: 14632}
     - Class: 114
-      Script: {instanceID: 14652}
+      Script: {instanceID: 14654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -478,7 +552,7 @@ ScriptsOnlyBuild:
     className: PolylineObject
   - hash:
       serializedVersion: 2
-      Hash: 97255beda73af1dd99e51f921cab0c50
+      Hash: 0fabeb7d120571d05c102248374c0e1e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Boss
@@ -730,6 +804,12 @@ ScriptsOnlyBuild:
     className: TiledMap
   - hash:
       serializedVersion: 2
+      Hash: fe8071342ad7441fe777db70e5edca88
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManagement
+  - hash:
+      serializedVersion: 2
       Hash: 9f1eb6f321d18cff833aa9f25063ce94
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -790,7 +870,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 991f27a5a1c0c66959dbd2f20dc75ee4
+      Hash: 4669aa3aafe2f6de24624b3b99a35717
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KnightMovement
@@ -1308,4 +1388,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
+  - Assets/Scenes/GameOver.unity
   playerPath: C:/Users/sivas/Desktop/INFO/S4/Jeu Video/BlackQuest/TestBuild/BlackQuest.exe

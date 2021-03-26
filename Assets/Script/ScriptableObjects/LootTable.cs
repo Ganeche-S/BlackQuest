@@ -19,6 +19,7 @@ public class LootTable : ScriptableObject
 			cumProb += loots[i].lootChance;
 			if(currentProb <= cumProb) {
 				return loots[i].thisLoot;
+				FindObjectOfType<AudioManager>().Play("DropHeart");
 			}
 		}
 		return null;

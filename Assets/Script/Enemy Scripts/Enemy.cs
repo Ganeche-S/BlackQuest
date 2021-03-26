@@ -18,12 +18,10 @@ public class Enemy : MonoBehaviour
 	public int baseAttack;
 	public float moveSpeed;
 
-	[Header("Death Effects")]
+	[Header("Enemy Stuff")]
 	public GameObject deathEffect;
 	private float deathEffectDelay = 1f;
 	public LootTable thisLoot;
-
-	[Header("Death Signals")]
 	public Signal roomSignal;
 	
 	private void Awake() {

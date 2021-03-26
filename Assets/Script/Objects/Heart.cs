@@ -25,6 +25,7 @@ public class Heart : Powerup {
     		if(knightHealth.initialValue > heartContainers.RuntimeValue *2f) {
     			knightHealth.initialValue = heartContainers.RuntimeValue * 2f;
     		}
+            FindObjectOfType<AudioManager>().Play("Heal");
     		powerupSignal.Raise();
     		Destroy(this.gameObject);
     	}
