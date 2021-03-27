@@ -54,6 +54,7 @@ public class KnightMovement : MonoBehaviour
     private IEnumerator AttackCo() {
         animator.SetBool("attacking", true);
         currentState = KnightState.attack;
+        FindObjectOfType<AudioManager>().Play("KnightAttack");
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
@@ -96,6 +97,7 @@ public class KnightMovement : MonoBehaviour
 
     public void Knock(float knockTime, float damage) {
         currentHealth.RuntimeValue -= damage;
+        FindObjectOfType<AudioManager>().Play("KnightDamage");
         knightHealthSignal.Raise();
         if(currentHealth.RuntimeValue > 0) {
             StartCoroutine(KnockCo(knockTime));

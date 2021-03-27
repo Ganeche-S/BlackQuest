@@ -30,9 +30,11 @@ public class Enemy : MonoBehaviour
 
 	private void TakeDamage(float damage) {
 		health -= damage;
+		FindObjectOfType<AudioManager>().Play("EnemyDamage");
 		if(health <= 0) {
 			DeathEffect();
 			MakeLoot();
+			FindObjectOfType<AudioManager>().Play("EnemyDeath");
 			if(roomSignal != null) {
 				roomSignal.Raise();
 			}
@@ -51,6 +53,7 @@ public class Enemy : MonoBehaviour
 			Powerup current = thisLoot.LootPowerup();
 			if(current != null) {
 				Instantiate(current.gameObject, transform.position, Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("DropHeart");
 			}
 		}
 	}

@@ -2361,6 +2361,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2496,6 +2497,103 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &519420035
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: aaeae887c3043be478e154e5065d46c7,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 271617c1ce804194d92e124abf52f8c6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &522257450
 GameObject:
   m_ObjectHideFlags: 0
@@ -8142,11 +8240,6 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: Dungeon
-    clip: {fileID: 8300000, guid: 271617c1ce804194d92e124abf52f8c6, type: 3}
-    volume: 1
-    loop: 1
-    source: {fileID: 0}
   - name: BossDeath
     clip: {fileID: 8300000, guid: 5045ad42ecd79474db727b10edf580fd, type: 3}
     volume: 1
@@ -8172,6 +8265,42 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: 7569357a975476c4dac779c5dbcc122c, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: KnightAttack
+    clip: {fileID: 8300000, guid: 38372d6d873ffcf4592bb82d6c8672df, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 4f7d97eaead1bb449a5fd628acb65e0d, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDamage
+    clip: {fileID: 8300000, guid: 7437baee558535e4b802ea95d21fde91, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: 8592c7b7383cca94182dc5b2ac68fe77, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: KnightDamage
+    clip: {fileID: 8300000, guid: 9e49f62b301c65d47ba6b34a58a498db, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: cfc6d02085c82374aa2f17ed8ec8581e, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!4 &1701523891
 Transform:
   m_ObjectHideFlags: 0

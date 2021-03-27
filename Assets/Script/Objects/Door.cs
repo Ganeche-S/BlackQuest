@@ -36,6 +36,7 @@ public class Door : Interactable
 		open = true;
 		//Enlever le box collider de la porte
 		physicsCollider.enabled = false;
+		FindObjectOfType<AudioManager>().Play("Door");
 	}
 
 	public void Close() {

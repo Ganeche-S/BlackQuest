@@ -8,15 +8,18 @@ public class GameManagement : MonoBehaviour {
 	public KnightMovement player;
 
 	public void Restart() {
+		FindObjectOfType<AudioManager>().Play("Select");
 		SceneManager.LoadScene("Game");
 	}
 
 	public void Exit() {
+		FindObjectOfType<AudioManager>().Play("Select");
 		SceneManager.LoadScene("Menu");
 	}
 
 	public void SetActiveTrue() {
 		this.gameObject.SetActive(true);
+		FindObjectOfType<AudioManager>().Play("Win");
 	}
 
 	public void gameWinOrDefeat() {

@@ -27,6 +27,7 @@ public class Knockback : MonoBehaviour
     				if(other.GetComponent<KnightMovement>().currentState != KnightState.stagger) {
 	    				hit.GetComponent<KnightMovement>().currentState = KnightState.stagger;
 	    				other.GetComponent<KnightMovement>().Knock(knockTime, damage);
+                        FindObjectOfType<AudioManager>().Play("EnemyAttack");
 	    			}
     			}
 
