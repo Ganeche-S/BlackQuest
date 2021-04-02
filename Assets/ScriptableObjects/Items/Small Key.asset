@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Small Key
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: 112305cfc1d494a44a5a2486b11f2859, type: 3}
-  itemDescription: "C'est une petite cl\xE9. Peut-\xEAtre qu'il y a une porte pas
-    loin ?"
+  itemDescription: "It\u2019s a small key. Maybe there\u2019s a door nearby?"
   isKey: 1

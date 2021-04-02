@@ -15,7 +15,7 @@ public class Boss : MonoBehaviour
 	[Header("Boss Stats")]
 	public int maxHealth = 10;
 	public float currentHealth;
-	public HealthBarBoss healthBar;
+	public HealthBar healthBar;
 	public float moveSpeed;
 	public float attackRadius;
 
@@ -48,7 +48,6 @@ public class Boss : MonoBehaviour
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
 		if(currentHealth <= 0) {
-			/*DeathEffect();*/
             FindObjectOfType<AudioManager>().Stop("Boss");
 			currentState = BossState.dead;
 			anim.SetBool("dead", true);
@@ -107,7 +106,6 @@ public class Boss : MonoBehaviour
 
     private void SetAnimFloat(Vector2 setVector) {
     	anim.SetFloat("moveX", setVector.x);
-    	/*anim.SetFloat("moveY", setVector.y);*/
     }
 
     public void changeAnim(Vector2 direction) {

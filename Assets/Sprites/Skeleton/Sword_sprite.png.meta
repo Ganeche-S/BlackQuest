@@ -127,9 +127,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 90
-        height: 100
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Sword_sprite_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 2
-        width: 90
-        height: 100
+        x: 92
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Sword_sprite_2
       rect:
         serializedVersion: 2
-        x: 180
-        y: 2
-        width: 90
-        height: 100
+        x: 184
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Sword_sprite_3
       rect:
         serializedVersion: 2
-        x: 270
-        y: 2
-        width: 90
-        height: 100
+        x: 276
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: Sword_sprite_4
       rect:
         serializedVersion: 2
-        x: 360
-        y: 2
-        width: 90
-        height: 100
+        x: 368
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Sword_sprite_5
       rect:
         serializedVersion: 2
-        x: 450
-        y: 2
-        width: 90
-        height: 100
+        x: 460
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Sword_sprite_6
       rect:
         serializedVersion: 2
-        x: 540
-        y: 2
-        width: 90
-        height: 100
+        x: 552
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Sword_sprite_7
       rect:
         serializedVersion: 2
-        x: 630
-        y: 2
-        width: 90
-        height: 100
+        x: 644
+        y: 0
+        width: 92
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

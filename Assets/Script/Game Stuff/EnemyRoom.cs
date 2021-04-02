@@ -5,19 +5,23 @@ using UnityEngine;
 public class EnemyRoom : Room
 {	
 	public Door[] doors;
+    public int enemyCount;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyCount = enemies.Length;
     }
 
     public void CheckEnemies() {
-    	for(int i = 0; i < enemies.Length; i++) {
+/*    	for(int i = 0; i < enemies.Length; i++) {
     		if(enemies[i].gameObject.activeInHierarchy && i < enemies.Length -1) {
     			return;
     		}
-    	}
-    	OpenDoor();
+    	}*/
+        enemyCount--;
+        if(enemyCount <= 0) {
+    	   OpenDoor();
+        }
     }
 
     public override void OnTriggerEnter2D(Collider2D other) {

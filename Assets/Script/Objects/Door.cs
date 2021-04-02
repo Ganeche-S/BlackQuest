@@ -13,9 +13,10 @@ public class Door : Interactable
 	public Inventory playerInventory;
 	public SpriteRenderer doorSprite;
 	public BoxCollider2D physicsCollider;
+	public BoxCollider2D trigger;
 
 	private void Update() {
-		if(Input.GetKeyDown("o")) {
+		if(Input.GetKeyDown(KeyCode.Return)) {
 			if(playerInRange && thisDoorType == DoorType.key) {
 				//Le joueur a t'il une clé
 				if(playerInventory.numberOfKeys > 0) {
@@ -23,6 +24,7 @@ public class Door : Interactable
 					playerInventory.numberOfKeys--;
 					//Si c vrai, on appelle la méthode pour ouvrir la porte
 					Open();
+					FindObjectOfType<AudioManager>().Play("Door");
 				}
 				
 			}
@@ -36,15 +38,16 @@ public class Door : Interactable
 		open = true;
 		//Enlever le box collider de la porte
 		physicsCollider.enabled = false;
-		FindObjectOfType<AudioManager>().Play("Door");
+		trigger.enabled = false;
 	}
 
 	public void Close() {
-		//Enlever le sprite de la porte fermé
+		//Mettre le sprite de la porte fermé
 		doorSprite.enabled = true;
-		//Mettre le bool de l'ouverture de la porte en true
+		//Mettre le bool de l'ouverture de la porte en false
 		open = false;
-		//Enlever le box collider de la porte
+		//Mettre le box collider de la porte
 		physicsCollider.enabled = true;
+		trigger.enabled = true;
 	}
 }

@@ -20,6 +20,9 @@ public class Switch : MonoBehaviour
     }
 
     public void ActivateSwitch() {
+        if(active == false) {
+            FindObjectOfType<AudioManager>().Play("Door");
+        }
     	active = true;
     	storedValue.RuntimeValue = active;
     	thisDoor.Open();

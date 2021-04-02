@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
 	[Header("Enemy Stats")]
 	public FloatValue maxHealth;
 	public float health;
+	public HealthBar healthBar;
 	public string enemyName;
-	public int baseAttack;
 	public float moveSpeed;
 
 	[Header("Enemy Stuff")]
@@ -26,10 +26,12 @@ public class Enemy : MonoBehaviour
 	
 	private void Awake() {
 		health = maxHealth.initialValue;
+		healthBar.SetMaxHealth(health);
 	}
 
 	private void TakeDamage(float damage) {
 		health -= damage;
+		healthBar.SetHealth(health);
 		FindObjectOfType<AudioManager>().Play("EnemyDamage");
 		if(health <= 0) {
 			DeathEffect();

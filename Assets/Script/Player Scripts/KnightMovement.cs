@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum KnightState {
-    walk, attack, interact, stagger, idle, dead
+    walk, attack, interact, stagger, idle, dead, win
 }
 public class KnightMovement : MonoBehaviour
 {
@@ -22,15 +22,16 @@ public class KnightMovement : MonoBehaviour
     public Signal knightHealthSignal;
     private Vector3 change;
     public Rigidbody2D myRigidbody;
-    private Animator animator;
+    public Animator animator;
     public GameManagement game;
 
     void Start()
     {
-        currentState = KnightState.walk;
+        currentState = KnightState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
+        FindObjectOfType<AudioManager>().Play("Dungeon");
     }
 
     // Update is called once per frame
@@ -55,11 +56,11 @@ public class KnightMovement : MonoBehaviour
         animator.SetBool("attacking", true);
         currentState = KnightState.attack;
         FindObjectOfType<AudioManager>().Play("KnightAttack");
-        yield return null;
+        yield return new WaitForSeconds(.4f);
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
         if(currentState != KnightState.interact) {
-            currentState = KnightState.walk;
+            currentState = KnightState.idle;
         }
     }
 
@@ -85,14 +86,15 @@ public class KnightMovement : MonoBehaviour
             animator.SetBool("moving", true);
         }
         else {
+            currentState = KnightState.idle;
             animator.SetBool("moving", false);
-            FindObjectOfType<AudioManager>().Play("KnightMovement");
         }
     }
 
     void MoveCharacter() {
         change.Normalize();
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        currentState = KnightState.walk;
     }
 
     public void Knock(float knockTime, float damage) {
@@ -126,5 +128,4 @@ public class KnightMovement : MonoBehaviour
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("GameOver");
     }
-
 }

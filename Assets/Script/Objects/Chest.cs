@@ -27,7 +27,7 @@ public class Chest : Interactable {
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("o") && playerInRange) {
+        if(Input.GetKeyDown(KeyCode.Return) && playerInRange) {
         	if(!isOpen) {
         		//Ouvrir le coffre
         		OpenChest();
