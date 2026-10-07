@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Hearts
   m_EditorClassIdentifier: 
   loots:
-  - thisLoot: {fileID: 1002742030892112418, guid: 7d168f645f9e192419a7ed41d43c83ea,
-      type: 3}
-    lootChance: 50
+  - thisLoot: {fileID: 1002742030892112418, guid: 7d168f645f9e192419a7ed41d43c83ea, type: 3}
+    lootChance: 80

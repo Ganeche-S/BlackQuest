@@ -31,15 +31,15 @@ public class GameManagement : MonoBehaviour {
 	}
 
 	public void gameWinOrDefeat() {
-		if(boss.currentHealth <= 0) {
-        	player.myRigidbody.isKinematic = true;
-            player.myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-        }
+		if (player == null) return;
 
-        if(player.currentHealth.RuntimeValue <= 0) {
-        	player.myRigidbody.isKinematic = true;
-            player.myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-        }
+		bool bossMort = boss != null && boss.currentHealth <= 0;
+		bool joueurMort = player.currentHealth != null && player.currentHealth.RuntimeValue <= 0;
+
+		if (bossMort || joueurMort) {
+			player.myRigidbody.isKinematic = true;
+			player.myRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+		}
 	}
 
 	public bool playerIsAlive() {
